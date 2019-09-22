@@ -1,0 +1,9 @@
+<table class="table table-hover">
+    <tr *ngFor="let plane of service.list">
+        <td(click)="popularForm(plane)"></td>[{{plane.Id}}]-{{plane.Modelo}}</td>
+        <td(click)="popularForm(plane)">{{plane.QuantidadePassageiros}}</td>
+        <td(click)="popularForm(plane)">{{plane.CriadoEm}}</td>
+        <td><button (click)="popularForm(plane.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+
+</table>
