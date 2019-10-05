@@ -1,6 +1,6 @@
 export class Airplane {
-    Id : number;
+    Id : any;
     Modelo : string;
     QuantidadePassageiros: number;
-    CriadoEm: Date;
+    CriadoEm: string;
 }

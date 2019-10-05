@@ -22,9 +22,9 @@ namespace GOLCrudAirplane.Api.Controllers
 
         // GET: api/Airplane
         [HttpGet]
-        public IEnumerable<Airplane>  Get()
+        public IActionResult GetList()
         {
-            return _appAirplane.List();
+            return Ok(_appAirplane.List());
         }
 
         // GET: api/Airplane/5
@@ -41,9 +41,9 @@ namespace GOLCrudAirplane.Api.Controllers
             return Ok(Airplane);
         }
 
-        // POST: api/Airplane
+        // POST: api/Airplane/incluir
         [HttpPost]
-        public IActionResult Post([FromBody] Airplane airplane)
+        public ActionResult<Airplane> PostAirplane([FromBody]Airplane airplane)
         {
             if (airplane != null)
             {

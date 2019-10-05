@@ -1,15 +1,14 @@
-<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+<form class="airplane-form" #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
     <input type="hidden" name="Id" #Modelo="ngModel" [(ngModel)]="service.formData.Id">
     <div class="form-group">
-        <label>Modelo</label>
-        <input name="Modelo" #Modelo="ngModel" [(ngModel)]="service.formData.Modelo" class="form-control" required>
+        <input name="Modelo" #Modelo="ngModel" [(ngModel)]="service.formData.Modelo" class="form-control" required placeholder="Modelo">
         <div class="validation-error" *ngIf="Modelo.invalid && Modelo.touched">Esse campo precisa ser preenchido</div>
     </div>
     <div class="form-group">
-        <label>Quantidade de Passageiros</label>
-        <input name="QuantidadePassageiros" #QuantidadePassageiros="ngModel" [(ngModel)]="service.formData.QuantidadePassageiros" class="form-control">
+        <input name="QuantidadePassageiros" #QuantidadePassageiros="ngModel" [(ngModel)]="service.formData.QuantidadePassageiros" class="form-control" placeholder="Quantidade de Passageiros">
     </div>
-    <div class="form-group">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Submit</button>
+    <div class="form-row">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-info"><i class="fa fa-floppy-o"></i>Submit</button>
+        <button type="button" [disabled]="form.invalid" class="btn btn-lg btn-secundary" (click)="resetForm()" ><i class="fa fa-repeat"></i>Reset</button>
     </div>
 </form>

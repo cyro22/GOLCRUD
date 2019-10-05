@@ -1,5 +1,7 @@
 ﻿using GOLCrudAirplane.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace GOLCrudAirplane.Infra.Config
 {
@@ -12,10 +14,10 @@ namespace GOLCrudAirplane.Infra.Config
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(StringConnectionConfig());
-                    
             }
 
         }
